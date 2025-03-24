@@ -3,7 +3,7 @@ layout:     post
 title:      "第一篇博客"
 date:       2025-03-23 12:00:00
 author:     "hangyangjun"
-header-img: "/img/firstPost.jpg"
+header-img: "img/firstPost.jpg"
 tags:
     - 博客
     - 第一次
