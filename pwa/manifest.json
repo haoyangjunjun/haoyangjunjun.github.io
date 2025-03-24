@@ -1,7 +1,7 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
+  "name": "好氧菌 Blog",
+  "short_name": "haoyangjunjun Blog",
+  "description": "话说英文名多了个jun是因为已经有人用了QAQ",
   "icons": [{
     "src": "icons/128.png",
     "sizes": "128x128",
