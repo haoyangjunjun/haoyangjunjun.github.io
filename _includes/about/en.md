@@ -13,7 +13,7 @@ Currently, I am familiar with Python and C, have experience deploying with Djang
 - 
 
 ##### My Accounts
-
+- [Email：2535935376@qq.com][5]
 - [CSDN Account: haoyangjunjunjun][1]
 - [Bilibili Account: Haoyangjunjun][2]
 - [GitHub Account: haoyangjunjun][3]
@@ -24,3 +24,4 @@ Currently, I am familiar with Python and C, have experience deploying with Djang
 [2]: https://space.bilibili.com/250580854
 [3]: https://github.com/haoyangjunjun
 [4]: http://wqdsjcc.ysepan.com/
+[5]: mailto:2535935376@qq.com

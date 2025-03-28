@@ -14,7 +14,7 @@
 
 
 ##### 我的账号
-
+- [Email：2535935376@qq.com][5]
 - [CSDN账号：haoyangjunjunjun][1]
 - [B站账号：好氧菌菌][2]
 - [GitHub账号：haoyangjunjun][3]
@@ -25,3 +25,4 @@
 [2]: https://space.bilibili.com/250580854
 [3]: https://github.com/haoyangjunjun
 [4]: http://wqdsjcc.ysepan.com/
+[5]: mailto:2535935376@qq.com
