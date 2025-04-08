@@ -44,7 +44,7 @@ func main() {                       // 声明一个名为 main 的函数
 }
 ```
 终端输入：`go run main.go`  
-成功输出: Hello, World!  
+成功输出: **Hello, World!**  
 <br>
 
 #### 解释
@@ -84,10 +84,11 @@ func main() {
 ```  
 结果：My weight on the surface of Mars is 51.0705 斤, and I would be 11 years old.  
 
-上面的代码清单会调用 `Print` 函数好几次, 另一种方法是调用 ***`Println`*** 函数，并向它传递一组由逗号分隔的参数, 如：(\n换行)
+上面的代码清单会调用 `Print` 函数好几次, 另一种方法是调用 ***`Println`*** 函数，并向它传递*一组由**逗号**分隔的参数*, 如：(\n换行)
 ```go
 fmt.Println("My weight on the surface of Mars is", 149.0*0.3783, "lbs, and I would be", 41*365.2425/687, "years old.")
 ```
+
 #### 格式化输出: `Printf` 函数
 ```go
 fmt.Printf("My weight on the surface of %v is %v lbs.\n", "Earth", 149.0)
@@ -101,6 +102,239 @@ fmt.Printf("%-15v$%4v\n", "Virgin Galactic", 100)
 上面这两行代码将打印出以下内容：
 SpaceX         $  94
 Virgin Galactic$ 100
+```  
+
+## 常量和变量
+两个新的关键字 `const` 和 `var` ，它们分别用于声明`常量`和`变量`
+```go
+// 例：How long does it take to get to Mars?
+    const lightSpeed = 299792 // km/s 常量 光速
+    var distance = 56000000   // km 变量 地火距离
+    fmt.Println(distance/lightSpeed, "seconds") // 打印出“186 seconds”
+    distance = 401000000  //地火最远距离
+    fmt.Println(distance/lightSpeed, "seconds") // 打印出“1337 seconds”
+```  
+``常量`` 是**不能修改**的，否则编译器报错  
+``变量`` 必须先**声明**后使用。  
+#### 一次声明多个变量
+```go
+var (
+     distance = 56000000
+     speed = 100800
+)
+或者
+var distance, speed = 56000000, 100800
+```
+#### 赋值增量快捷方式
+`a*=b` == `a=a*b`  或 `+=` 和 `++` `--`等不过多赘述  
+<font color=yellow>**Go并不支持 ``++count`` 这样的前置加法操作**  </font>  
+
+### 生成随机数
+使用rand包，但是是伪随机
+```go
+package main
+
+import (
+    "fmt"
+    "math/rand"//导入包 调用 Intn 函数的时候只需要使用包名 rand 作为前缀即可，不需要使用整个导入路径。
+)
+
+func main() {                  //搞个1-10的随机数
+    var num = rand.Intn(10) + 1//此处不加1触发典型的计算机编程错误：差一错误（off-by-one error）
+    fmt.Println(num)
+}
+```  
+## 循环和分支
+>注意: 某些编程语言对于`真`的定义比较宽松。比如 Python 和 JavaScript 就把空文本 "" 和数字零看作是`假`， 但是 Ruby 和 Elixir 却把这两个值看作是`真`。    
+<font color=yellow>对于 Go 来说， `true` 是唯一的`真`值， 而 `flase` 则是唯一的`假`值。</font>  
+
+```go
+package main
+
+import (
+    "fmt"
+    "strings" //导包
+)
+
+func main() {
+    fmt.Println("You find yourself in a dimly lit cavern.")
+    var command = "walk outside"
+    var exit = strings.Contains(command, "outside")  //Contains 函数来检查变量是否包含“outside”，返回布尔变值
+    fmt.Println("You leave the cave:", exit)
+ }
 ```
 
+#### 比较
+
+== 相等
+!= 不相等
+\< 小于
+\> 大于
+\<= 小于等于
+\>= 大于等于。
+在此不赘述  
+如：`var minor = age < 18` 变量 minor为布尔值  
+
+>注意： JavaScript 和 PHP 都提供了特殊的三等号（threequals）运算符来实现严格的相等性检查。 在这些语言中， 宽松检查 "1" == 1 的结果为真， 而严格检查 "1"  ===  1 的结果则为假。 Go 只提供了一个相等运算符， 并且它不允许直接比较文本和数字。  
+
+#### `if` 判断
+```go
+var command = "go east"
+    if command == "go east" {           // 检查命令是否为“go east”
+         fmt.Println("You head further up the mountain.")
+    } else if command == "go inside" {  // 在第一次检查为假之后，检查命令是否为“go inside”
+         fmt.Println("You enter the cave where you live out the rest of your life.")
+    } else {                            // 如果前两次检查都为假，那么执行第三个分支
+         fmt.Println("Didn't quite get that.")
+    }
+```  
+>注意：不要试图用赋值操作符 = 来代替相等运算符 ==  
+**`else` 等需要与上一`if`或`else if`的`}`写在同一行**
+
+逻辑运算符 `||` 代表“逻辑或”，而逻辑运算符 `&&` 则代表“逻辑与” `!` "非"  
+
+**短路逻辑**： 如果位于 `||` 运算符之前的第一个条件为真，那么位于运算符之后的条件就可以被忽略  
+<br>  
+
+#### `switch` 分支判断
+```go
+var command = "go inside"
+switch command {    // 将命令和给定的多个分支进行比较
+case "go east":
+    fmt.Println("You head further up the mountain.")
+case "enter cave", "go inside":     // 使用逗号分隔可选值
+    fmt.Println("You find yourself in a dimly lit cavern.")
+default:        //默认 当没有case触发
+    fmt.Println("Didn't quite get that.")
+}
+```
+**case 可用逗号分隔可选值**， 且与C不同的，switch后不加（括号）  
+**也可在每个分支中单独设置比较条件**  `case zhu == 6`
+>在 C、Java、JavaScript 等语言中， 下降是 switch 语句各个分支的默认行为。 
+Go需要显式地使用 fallthrough 关键字才会引发下降。也就是不用break了。
+
+#### `for` 循环
+```go
+package main       //倒计时
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    var count = 10              // 声明并初始化
+    for count > 0 {             // 为循环设置条件
+        fmt.Println(count)
+        time.Sleep(time.Second) //sleep 一秒
+        count--    // 每次循环之后将计数器的值减一，以免产生无限循环
+    }
+    fmt.Println("Liftoff!")
+}
+```
+**也可以不设条件，在循环内部判断break**  
+
+## 变量作用域
+Go 的作用域通常会随着大括号 {} 的出现而开启和结束  
+#### 变量简短声明：
+```go
+var count = 10
+count := 10            //二者等价
+```
+**简短声明还可以用在一些 `var` 关键字无法使用的地方(if fo switch)**
+但包作用域不允许使用简短声明  
+
+```go
+for count := 10; count > 0; count-- {
+    fmt.Println(count)
+}    // 随着循环结束，count 变量将不再处于作用域之内。
+```
+为了代码的可读性考虑， 声明变量的位置和使用变量的位置应该尽可能地贴近。  
+简短声明还可以在 `if` 语句里面声明新的变量,如：`if num := rand.Intn(3); num == 0 {`  
+也可以用在 `switch` 语句里面。`switch num := rand.Intn(10); num {`包括`case`和`default`  
+
+尽管狭窄的作用域有助于减少脑力负担，但过分约束变量将损害代码的可读性。 在遇到这种问题的时候，我们应该根据具体情况逐步实施重构，直到代码的可读性能够满足我们的要求为止。如果代码重复是由变量声明引起的， 那么变量可能就是被约束得太紧了。  
+
+## 总结小练习
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func main() { // 声明一个名为 main 的函数
+	fmt.Printf("太空公司           飞行天数       飞行类型       价格（百万美元）\n")
+	for i:=10 ; i>0 ; i--{
+		company := ""
+		switch i:=rand.Intn(3) ;i{
+		case 0:
+			company = "Virgin Galactic"
+		case 1:
+			company = "SpaceX"
+		case 2:
+			company = "Space Adventures"
+		}
+		speed := rand.Intn(15)+16
+		days := 62100000/speed/3600/24   
+		types := "单程"
+		type1 := 1
+		if j:=rand.Intn(2) ;j==0 {
+			types = "往返"
+			type1 = 2
+		}
+		price := (36+speed-16)*type1  //价格这里踩坑了，一开始计算带一个比例系数，结果一直等于零，原来是忘了转换float，结果0.几的都成零了QAQ
+		fmt.Printf("%-20v%-15v%-13v%-10v\n",company,days,types,price)
+    }
+}
+
+输出：
+太空公司           飞行天数       飞行类型       价格（百万美元）
+SpaceX              24             单程           49        
+Space Adventures    29             单程           44
+Space Adventures    32             单程           42
+Virgin Galactic     31             往返           86
+Virgin Galactic     35             往返           80
+Virgin Galactic     26             往返           94
+SpaceX              34             单程           41
+Space Adventures    34             往返           82
+SpaceX              24             往返           98
+Virgin Galactic     31             单程           43
+```
+
+# 类型
+## 浮点数
+>IEEE-754 标准 储存浮点数  [csdn:简读+案例=秒懂](https://blog.csdn.net/weixin_47713503/article/details/108699001)  
+
+go编译器可以自动判断类型，带小数点的会被设置为`float64`类型  
+`days := 365.2425`  或  `var days float64 = 365.2425`  是同等的  
+如果变量为整数，需要**显式指定**，若定义变量未赋值，则默认为**0**（零值zero value）
+
+go中默认浮点为 `floar64` 也就是**双精度**，占用**8字节**，另一种`float32` **单精度** **4字节** (当数据量很大时，可以用精度换空间)
+```go
+	f64 := math.Pi        //很直观的例子
+	var f32 float32 = math.Pi
+	fmt.Print(f64,f32)
+```
+### 输出
+使用 `Printf` 指定位数格式化输出，如  `fmt.Printf("%4.2f",f64)`   
+**注意：此时`4`为输出宽度（限制最少输出*字符*，左补`空格` 若想补`0`则需要：`%04.2`），`2`为小数精度**  
+`%f` 默认**6位小数**
+
+### 不精确
+计算机中浮点数常常出现**舍入错误**，这会造成浮点数不够“精确”  
+可以通过**限制输出位数**解决（或者干脆别用）  
+或者先计算乘法，来提高精度
+
+### 比较
+在两个浮点数（0.1+0.2）中本应是**0.3**的结果变成了**0.30000000000000004**
+可以通过计算两个浮点数之间的差值，判断二者是否相等
+```go
+    f64 := 0.1
+    f64 += 0.2
+    fmt.Println(f64 == 3)
+    fmt.Println(math.Abs(f64-0.3)<0.0001)    //Abs是计算绝对值
+```
+单个操作引发浮点数错误的上限值被称为机械最小值，对于float64值为2<sup>-52</sup>，float32为<sup>-23<sup>  
+但是浮点数的错误**累计**的很快，所以处理好**容差**很重要。
 
