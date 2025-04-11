@@ -99,9 +99,9 @@ fmt.Printf("My weight on the surface of %v is %v lbs.\n", "Earth", 149.0)
 ```go
 fmt.Printf("%-15v$%4v\n", "SpaceX", 94)
 fmt.Printf("%-15v$%4v\n", "Virgin Galactic", 100)
-上面这两行代码将打印出以下内容：
-SpaceX         $  94
-Virgin Galactic$ 100
+// 上面这两行代码将打印出以下内容：
+// SpaceX         $  94
+// Virgin Galactic$ 100
 ```  
 
 ## 常量和变量
@@ -225,8 +225,8 @@ func main() {
     var count = 10              // 声明并初始化
     for count > 0 {             // 为循环设置条件
         fmt.Println(count)
-        time.Sleep(time.Second) //sleep 一秒
-        count--    // 每次循环之后将计数器的值减一，以免产生无限循环
+        time.Sleep(time.Second) // sleep 一秒
+        count--                 // 每次循环之后将计数器的值减一，以免产生无限循环
     }
     fmt.Println("Liftoff!")
 }
@@ -403,6 +403,47 @@ var distance int64 = 41.3e12    //用指数形式写出到比邻星的距离（k
 - 存储任意精度浮点数 `big.Float`
 - 存储如1/3的分数 `big.Rat`  
 
+#### 使用
 
+`big.Int` 类型 需要在等式的每个部分都被使用，基本方法为使用 `NewInt` 函数，接受一个`int64`类型输入，返回`big.Int`类型输出。  
+```go
+import("math/big")
+...
+lightSpeed := big.NewInt(299792)
+```
+超过`int64`取值上限时，给定一个 `string` 创建值：  
+```go
+distance := new(big.Int)
+distance.SetString("2400000000000000000000",10)
+```
+这段代码创建`big.Int`变量后，调用`SetString`**方法**设置数值，其第二个参数是**10进制**的意思  
 
+*不理解的部分无需在意，后面会讲到*  
+```go
+second := new(big.Int)//终于可以精确计算
+second.Div(distance,lightSpeed)  //打印出需要的秒数
+```
+虽然精确，但是代价是麻烦和比较慢  
+
+#### 常量有点不一样
+
+有趣的是，声明一个不带类型的常量，超过int最大值时，与处理变量变得不同了起来
+go语言不会推断其类型，而是直接标识为无类型（untyped） 如：  
+```go
+const distance = 2400000000000000000  //不会报错
+```
+除了用 const 进行声明，在程序里每个字面量值（literal value）也都是常量，也就是说如果数值很大也可以直接使用。如：  
+```go
+fmt.Println("Andromeda Galaxy is",240000000000000000/299792/86400,"light days away.") //打印结果正确
+```
+对用常量和字面量的计算都将在 **编译** 时执行，由于编译器也是go写的，所以在底层，无类型的数值常量由big包提供支持，也就不会像int型溢出之类的  
+
+注意：尽管编译器用big包处理无类型数值常量，但是常量无法与big.Int值互换，如直接打印distance常量将引发溢出错误：  
+```go
+const distance = 240000000000000000000000
+fmt.Println(distance)// int溢出
+```
+非常大常量很好，但是无法取代big包，就是说无类型常量被用作函数参数的时候，必须转换为有类型变量。  
+
+## 多语言文本
 
