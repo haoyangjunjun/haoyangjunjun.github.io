@@ -2,7 +2,7 @@
 <br>
 本人不是高冷，只是有点社恐。希望未来可以在优秀开源项目中贡献自己的力量。  
 <br>
-目前熟悉python、c，有Django部署经验，使用过vue前端框架，熟悉SQL数据库，使用爬虫抓过数据，kaliLinux操作基础，熟练使用一些渗透测试工具，用过Arduino，用HubilderX做过一个App，熟悉GitHub，英语六级，Blender建模渲染基础，剪辑、p图、修电脑......  
+目前有python、c、go基础，有Django部署经验，使用过vue前端框架，熟悉SQL数据库，使用爬虫抓数据，kaliLinux基础，熟练使用一些渗透测试工具，wireshark流量分析，一定ctf解题经验，用过Arduino，用HubilderX做过一个App，熟悉GitHub，英语六级，Blender建模渲染，剪辑、p图、修电脑，模型制作......  
 <br>
 > 好吧我会的太少，不会的太多，想了半天才想出这么可怜的一点，而且没有精通任何一项技能，学无止境啊，待我日后学成归来再来更新！  
 
