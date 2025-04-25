@@ -9,6 +9,7 @@ tags:
     - 笔记
     - go
     - 学习
+    - 书
 ---
 > 参考资料：[《Go语言趣学指南》](https://huangz.works/gpwg/preview/lession1.html#id1)  
 
