@@ -146,6 +146,8 @@ JSON：application/json（如 {"name": "Alice"}）
 今天没什么事情，复习一下java，笔记我再单开一个博客好了  
 还有maven也要学一下
 
+### 培训1-接口学习
+
 今天公司老师讲了一些东西，消化一下，还有一些作业
 
 关于 spring boot 的接口传参  
@@ -153,10 +155,9 @@ JSON：application/json（如 {"name": "Alice"}）
 
 intellij idea 社区版新建spring boot项目很麻烦啊，只能装一个学习版了  
 参考：  
-[IDEA 安装、破解和汉化教程【新】](https://www.cnblogs.com/N1ko/p/18020866)  
-[idea社区版本创建springboot项目的三种方式](https://developer.aliyun.com/article/1625955)
+- [IDEA 安装、破解和汉化教程【新】](https://www.cnblogs.com/N1ko/p/18020866)  
+- [idea社区版本创建springboot项目的三种方式](https://developer.aliyun.com/article/1625955)
 
-### 接口学习
 
 然后在idea里运行java还是遇到些许困难  
 首先要解决的是jdk版本不匹配问题  
@@ -172,6 +173,8 @@ intellij idea 社区版新建spring boot项目很麻烦啊，只能装一个学�
 地址：http://127.0.0.1:9001/api/v1/get-1  
 下载了一个postman进行接口测试
 
+.http 文件也可以进行接口调用
+
 get传参  
 可用地址或参数
 
@@ -181,11 +184,41 @@ params、请求体json、form-data
 研究了一下apicontroller的方法，着手写接口练习  
 直接复制粘贴，改改名字就好，最后一个传文件的接口还有些难度。不过在ai的指导下还是完成了所有功能，包括扩展的保存和对比md5功能
 
-今天继续复习java基础，具体写在另一篇博客
+今天继续复习java基础，具体写在另一篇博客  
+...  
+最近这几天学java学的我头发要掉了
 
+### 培训2-使用 Spring Boot 连接数据库
+遇到的问题：
+1. jdk版本问题
+2. MySQL连接问题
+3. 指定数据库方言
 
+**依赖**  
+- JPA 指 Java Persistence API，是Java EE 平台规范中用于管理Java 对象和关系数据库之间持久化数据的标准API。简单来说，JPA 提供了一种将Java 对象映射到数据库表的方式，使得开发者可以用操作对象的方式来操作数据库，而无需直接编写SQL语句。
+- jpa-spec **动态拼接属性** 用于构造查询条件 [jpa-spec](https://github.com/wenhao/jpa-spec)
+- Spring Web 提供web接口
+- lombok 自动生成get set方法 构造方法
+- MySQL Driver
 
+Java与Oracle、PostgresSQL数据类型对应
+| Java    | Oracle                      | PostgresSQL | MySQL              |
+| ------- | --------------------------- | ----------- | ------------------ |
+| Boolean | number(1)                   | boolean     | boolean            |
+| Byte    | number(2)                   |             |                    |
+| Short   | number(3)~number(4)         | int2        |                    |
+| Integer | number(5)~number(9)         | int4        | integer            |
+| Long    | number(10)~number(18)       | int8        | integer            |
+| Float   | number(m,n)m:长度n:小数位数 | float4      | float              |
+| Double  | number(m,n)m:长度n:小数位数 | float8      | double             |
+| String  | varchar2                    | varchar     | text               |
+| Date    | timestamp                   | timestamp   | datetime/timestamp |
+| Byte[]  | blob ：二进制存储           |             | blob               |
+| String  | clob：大文本存储            | text        | longtext           |
 
+直接在AccountRepository写接口，甚至不用实现
+
+留的关于数据库操作的任务算基本完成了，但是我这一知半解，java还真是难理解，感觉过一小会就会忘得一干二净。
 
 
 
