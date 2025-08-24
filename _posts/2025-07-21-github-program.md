@@ -9,7 +9,7 @@ tags:
     - 记录
     - 学习
     - github
-    - ai
+    - AI
     - vue
 ---
 >并非安时间顺序排列

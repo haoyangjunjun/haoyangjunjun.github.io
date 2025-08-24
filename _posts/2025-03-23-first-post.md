@@ -5,8 +5,7 @@ date:       2025-03-23 12:00:00
 author:     "hangyangjun"
 header-img: "img/firstPost.jpg"
 tags:
-    - 博客
-    - 第一次
+    - 非编程
 ---
 
 >这是fork了Hux Blog后发布的第一篇博客，虽然也不知道该写些什么。  
