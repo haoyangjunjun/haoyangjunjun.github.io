@@ -1,4 +1,4 @@
-# <center>haoyangjunjun.github.io 好氧菌的博客</center>
+# <center>The blog of haoyangjunjun</center>
 [![中文](https://img.shields.io/badge/README-中文-494cad)](./README.md)
 [![English](https://img.shields.io/badge/README-English-494cad)](./readme-en.md)  
 
@@ -11,11 +11,11 @@
 [![GitHub Issues](https://img.shields.io/github/issues/haoyangjunjun/haoyangjunjun.github.io)](https://github.com/haoyangjunjun/haoyangjunjun.github.io/issues)
 ![GitHub License](https://img.shields.io/github/license/haoyangjunjun/haoyangjunjun.github.io)
 ![GitHub Version](https://img.shields.io/github/package-json/v/haoyangjunjun/haoyangjunjun.github.io)
-## 博客模板取自：[Hux Blog](https://huangxuan.me)  
-使用非常简单啊，以后会在这里更新一些我自己的内容
+##  The blog template is derived from：[Hux Blog](https://huangxuan.me)  
+It's very easy to use. I'll update some of my own content here in the future
 
 ![Repobeats Analytics](https://repobeats.axiom.co/api/embed/75e057a18438d44f9cb67ffd93467af42732fede.svg "Repobeats analytics image")  
 
-## 🙏 致谢
+## 🙏 Contributors
 [![Contributors](https://contrib.rocks/image?repo=haoyangjunjun/haoyangjunjun.github.io)](https://github.com/haoyangjunjun/haoyangjunjun.github.io/graphs/contributors)
 
