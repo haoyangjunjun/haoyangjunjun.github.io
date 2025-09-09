@@ -10,23 +10,31 @@ I love staying up late to code😴. I'm an introvert with a warm heart. I hope t
 
 
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge\&logo=c\&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge\&logo=go\&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge\&logo=vue.js\&logoColor=4FC08D)
-![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge\&logo=kali-linux\&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge\&logo=github\&logoColor=white)
-![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge\&logo=blender\&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)  
+
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge\&logo=c\&logoColor=white)  
+
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge\&logo=go\&logoColor=white)  
+
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)  
+
+![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge\&logo=vue.js\&logoColor=4FC08D)  
+
+![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge\&logo=postgresql\&logoColor=white)  
+
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge\&logo=kali-linux\&logoColor=white)  
+
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge\&logo=github\&logoColor=white)  
+
+![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge\&logo=blender\&logoColor=white)  
 
 ## My Projects
 
 
-
-*   [Dru](https://haoyangjun.pythonanywhere.com/)[g Man](https://haoyangjun.pythonanywhere.com/)[ageme](https://haoyangjun.pythonanywhere.com/)[nt Sy](https://haoyangjun.pythonanywhere.com/)[stem](https://haoyangjun.pythonanywhere.com/)[ (base](https://haoyangjun.pythonanywhere.com/)[d on](https://haoyangjun.pythonanywhere.com/)[ Djang](https://haoyangjun.pythonanywhere.com/)[o, de](https://haoyangjun.pythonanywhere.com/)[ploye](https://haoyangjun.pythonanywhere.com/)[d on](https://haoyangjun.pythonanywhere.com/)[ pytho](https://haoyangjun.pythonanywhere.com/)[nanyw](https://haoyangjun.pythonanywhere.com/)[here)](https://haoyangjun.pythonanywhere.com/)
-
-*   More projects are under development, stay tuned...🚀
+- 💊 基于Django，部署在pythonanywhere的管理系统：[DMS药品管理系统](https://haoyangjun.pythonanywhere.com/)  
+- 📕 基于[Hux Blog](https://huangxuan.me)的个人博客：[好氧菌的博客](https://haoyangjunjun.github.io)  
+- 📑 一些其他的项目，日后再整理
+- More projects are under development, stay tuned...🚀
 
 ## My Tech Stack
 

@@ -6,17 +6,25 @@
 爱熬夜敲代码😴，是外冷内热的社恐，希望未来能在优秀的开源项目中贡献自己的一份力量
 
 ## 正在学习:
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge\&logo=c\&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge\&logo=go\&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge\&logo=vue.js\&logoColor=4FC08D)
-![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge\&logo=kali-linux\&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge\&logo=github\&logoColor=white)
-![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge\&logo=blender\&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)  
 
-## 我的作品
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge\&logo=c\&logoColor=white)  
+
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge\&logo=go\&logoColor=white)  
+
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)  
+
+![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge\&logo=vue.js\&logoColor=4FC08D)  
+
+![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge\&logo=postgresql\&logoColor=white)  
+
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge\&logo=kali-linux\&logoColor=white)  
+
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge\&logo=github\&logoColor=white)  
+
+![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge\&logo=blender\&logoColor=white)  
+
+## 个人项目
 
 
 
@@ -26,7 +34,9 @@
 
 
 
-- [药品管理系统（基于Django，部署在pythonanywhere）](https://haoyangjun.pythonanywhere.com/)
+- 💊 基于Django，部署在pythonanywhere的管理系统：[DMS药品管理系统](https://haoyangjun.pythonanywhere.com/)  
+- 📕 基于[Hux Blog](https://huangxuan.me)的个人博客：[好氧菌的博客](https://haoyangjunjun.github.io)  
+- 📑 一些其他的项目，日后再整理
 - 更多作品正在努力开发中，敬请期待...🚀
 
 
