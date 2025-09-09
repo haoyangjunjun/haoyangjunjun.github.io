@@ -1,27 +1,76 @@
-Hello, I am Haoyangjunjun, a beginner currently in my junior year studying Information Security at [Hebei Finance University](https://www.hbfu.edu.cn/). I enjoy staying up late and coding.
-<br>
-I'm not standoffish, just a bit socially awkward. I hope to contribute to excellent open-source projects in the future.
-<br>
-Currently, I am familiar with Python and C, have experience in deploying Django projects, have used Vue front-end framework, am familiar with SQL databases, have scraped data using web crawlers, possess basic operating skills in Kali Linux, am proficient in using some penetration testing tools, have worked with Arduino, have developed an app using HBuilderX, am familiar with GitHub, have passed CET-6 (College English Test Band 6), possess basic skills in Blender modeling and rendering, and am capable of video editing, photo retouching, and computer repair.
-<br>
-> Okay, I know too little and don't know too much. It took me a long time to come up with such a pitiful amount. I'm not proficient in any skill. There's no end to learning. I'll update this when I've learned more in the future!
+# 👋 haoyangjunjun's Profile
 
-##### My Works
-- [Medicine Management System (Based on Django, deployed on pythonanywhere)](https://haoyangjun.pythonanywhere.com/)
-- ...
-- 
-- 
+## About Me
 
-##### My Accounts
-- [Email：2535935376@qq.com][5]
-- [CSDN Account: haoyangjunjunjun][1]
-- [Bilibili Account: Haoyangjunjun][2]
-- [GitHub Account: haoyangjunjun][3]
-- [Yongshuo E-Disk: Ruthless Data Storage][4]
-- Others: Keep it a secret for now
+Hello! I'm **haoyangjunjun** (also known as: 好氧菌菌), a novice in the programming field👨💻. Currently, I'm a senior student majoring in Information Security at [Heb](https://www.hbfu.edu.cn/)[ei Fi](https://www.hbfu.edu.cn/)[nance](https://www.hbfu.edu.cn/)[ Univ](https://www.hbfu.edu.cn/)[ersit](https://www.hbfu.edu.cn/)[y](https://www.hbfu.edu.cn/).
 
-[1]: https://blog.csdn.net/2403_83938280
-[2]: https://space.bilibili.com/250580854
-[3]: https://github.com/haoyangjunjun
-[4]: http://wqdsjcc.ysepan.com/
-[5]: mailto:2535935376@qq.com
+I love staying up late to code😴. I'm an introvert with a warm heart. I hope to contribute my part to excellent open-source projects in the future.
+
+## Currently Learning:
+
+
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge\&logo=c\&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge\&logo=go\&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge\&logo=vue.js\&logoColor=4FC08D)
+![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge\&logo=postgresql\&logoColor=white)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge\&logo=kali-linux\&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge\&logo=github\&logoColor=white)
+![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge\&logo=blender\&logoColor=white)
+
+## My Projects
+
+
+
+*   [Dru](https://haoyangjun.pythonanywhere.com/)[g Man](https://haoyangjun.pythonanywhere.com/)[ageme](https://haoyangjun.pythonanywhere.com/)[nt Sy](https://haoyangjun.pythonanywhere.com/)[stem](https://haoyangjun.pythonanywhere.com/)[ (base](https://haoyangjun.pythonanywhere.com/)[d on](https://haoyangjun.pythonanywhere.com/)[ Djang](https://haoyangjun.pythonanywhere.com/)[o, de](https://haoyangjun.pythonanywhere.com/)[ploye](https://haoyangjun.pythonanywhere.com/)[d on](https://haoyangjun.pythonanywhere.com/)[ pytho](https://haoyangjun.pythonanywhere.com/)[nanyw](https://haoyangjun.pythonanywhere.com/)[here)](https://haoyangjun.pythonanywhere.com/)
+
+*   More projects are under development, stay tuned...🚀
+
+## My Tech Stack
+
+
+
+| Skill                        | Proficiency                           |
+| ---------------------------- | ------------------------------------- |
+| Python                       | 🐍 Basic                              |
+| C                            | 💻 Basic                              |
+| Go                           | 🦫 Basic                              |
+| Django                       | 🌐 Has deployment experience          |
+| Vue                          | 🖼️ Basic usage                       |
+| SQL                          | 🗄️ Familiar                          |
+| Web Crawling                 | 🕷️ Can crawl data                    |
+| Kali Linux                   | ⚙️ Basic                              |
+| Penetration Testing Tools    | 🔍 Partial usage                      |
+| Wireshark                    | 📊 Simple analysis                    |
+| CTF                          | 🚩 Certain problem-solving experience |
+| Arduino                      | 🔌 Basic usage                        |
+| HBuilderX                    | 📱 Made one App                       |
+| GitHub                       | 🔄 Familiar with usage                |
+| English                      | 🗣️ CET-6+                            |
+| Blender                      | 🎨 Basic modeling and rendering       |
+| Video Editing, Image Editing | 🎬 A little knowledge                 |
+| Computer Repair              | 🔧 Slightly knowledgeable             |
+| Model Making                 | 🛠️ Basic                             |
+
+> Well, I really know too little. There are still so many things I don't know. It took me a long time to think of this little bit, and I'm not proficient in any skill. Indeed, there's no end to learning! I'll update when I've made more progress in the future😊
+
+## Statistics
+
+
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=haoyangjunjun\&show_icons=true\&theme=tokyonight)
+
+
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=haoyangjunjun\&layout=compact)
+
+## Contact Me (Links)
+
+* ![Email](https://img.shields.io/badge/qq_mail-2535935376@qq.com-red?logo=gmail\&logoColor=white)
+* ![CSDN](https://img.shields.io/badge/CSDN-haoyangjunjunjun-orange?logo=csdn\&logoColor=white)
+* ![Bilibili](https://img.shields.io/badge/Bilibili-好氧菌菌-blue?\&logo=bilibili\&logoColor=white)
+* ![GitHub](https://img.shields.io/badge/GitHub-haoyangjunjun-black?\&logo=github\&logoColor=white)
+* ![Yongshuo e-disk](https://img.shields.io/badge/永硕e盘-无情的数据存储-green?)
+* ![Others](https://img.shields.io/badge/Others-Secret-gray?\&logoColor=white)
