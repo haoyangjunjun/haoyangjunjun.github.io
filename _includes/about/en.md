@@ -31,38 +31,29 @@ I love staying up late to code😴. I'm an introvert with a warm heart. I hope t
 ## My Projects
 
 
-- 💊 基于Django，部署在pythonanywhere的管理系统：[DMS药品管理系统](https://haoyangjun.pythonanywhere.com/)  
-- 📕 基于[Hux Blog](https://huangxuan.me)的个人博客：[好氧菌的博客](https://haoyangjunjun.github.io)  
-- 📑 一些其他的项目，日后再整理
+- 💊  Based on Django, deployed on Python anywhere management system：[DMS Drug Management System](https://haoyangjun.pythonanywhere.com/)  
+- 📕 Based on[Hux Blog](https://huangxuan.me)Personal blog：[好氧菌Blog](https://haoyangjunjun.github.io)  
+- 📑 Some other projects, to be organized later
 - More projects are under development, stay tuned...🚀
 
 ## My Tech Stack
 
 
 
-| Skill                        | Proficiency                           |
-| ---------------------------- | ------------------------------------- |
-| Python                       | 🐍 Basic                              |
-| C                            | 💻 Basic                              |
-| Go                           | 🦫 Basic                              |
-| Django                       | 🌐 Has deployment experience          |
-| Vue                          | 🖼️ Basic usage                       |
-| SQL                          | 🗄️ Familiar                          |
-| Web Crawling                 | 🕷️ Can crawl data                    |
-| Kali Linux                   | ⚙️ Basic                              |
-| Penetration Testing Tools    | 🔍 Partial usage                      |
-| Wireshark                    | 📊 Simple analysis                    |
-| CTF                          | 🚩 Certain problem-solving experience |
-| Arduino                      | 🔌 Basic usage                        |
-| HBuilderX                    | 📱 Made one App                       |
-| GitHub                       | 🔄 Familiar with usage                |
-| English                      | 🗣️ CET-6+                            |
-| Blender                      | 🎨 Basic modeling and rendering       |
-| Video Editing, Image Editing | 🎬 A little knowledge                 |
-| Computer Repair              | 🔧 Slightly knowledgeable             |
-| Model Making                 | 🛠️ Basic                             |
+| Skill         | Proficiency    | Skill         | Proficiency    |
+| ---------- | ----------- | ---------- | ----------- |
+| Python     | 🐍 Basic       | C          | 💻 Basic       |
+| Go         | 🦫 Basic       | Django     | 🌐 Experience in deployment    |
+| Vue        | 🖼️ Basic Usage    | SQL        | 🗄️ Familiarity |
+| Web crawler | 🕷️ Can crawl data | Kali Linux | ⚙️ Basic |
+| Penetration testing tool | 🔍 Partially used | Wireshark | 📊 Simple analysis |
+| CTF        | 🚩 Must have problem-solving experience   | Arduino    | 🔌 Basic usage     |
+| HBuilderX  | 📱 Developed an App | GitHub     | 🔄 Familiar with its use |
+| English | 🗣️ Level 6+ | Blender | 🎨 Basic Modeling and Rendering |
+| Editing, Photoshop | 🎬 A bit skilled | Computer repair | 🔧 Slightly familiar |
+| Model Making       | 🛠️ Basics      |
 
-> Well, I really know too little. There are still so many things I don't know. It took me a long time to think of this little bit, and I'm not proficient in any skill. Indeed, there's no end to learning! I'll update when I've made more progress in the future😊
+> Okay, currently, these skills seem to be only superficially mastered, none of them are proficient. I will continue to learn
 
 ## Statistics
 
