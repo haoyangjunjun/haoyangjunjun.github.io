@@ -36,6 +36,7 @@
 
 - 💊 基于Django，部署在pythonanywhere的管理系统：[DMS药品管理系统](https://haoyangjun.pythonanywhere.com/)  
 - 📕 基于[Hux Blog](https://huangxuan.me)的个人博客：[好氧菌的博客](https://haoyangjunjun.github.io)  
+- 🗺 基于vue的：[简易介绍保定的小网站](https://haoyangjunjun.github.io/Baoding-introduction-Vue-homework)
 - 📑 一些其他的项目，日后再整理
 - 更多作品正在努力开发中，敬请期待...🚀
 

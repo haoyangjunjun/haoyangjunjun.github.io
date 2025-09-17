@@ -7,7 +7,6 @@ author:     "hangyangjun"
 header-img: "img/training.png"
 tags:
     - 记录
-    - 学习
     - 实习
     - java
 ---
@@ -221,5 +220,9 @@ Java与Oracle、PostgresSQL数据类型对应
 留的关于数据库操作的任务算基本完成了，但是我这一知半解，java还真是难理解，感觉过一小会就会忘得一干二净。
 
 
+Spring Boot
 
+angular
+
+以及其他，以后再更新
 

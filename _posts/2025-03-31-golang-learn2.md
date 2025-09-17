@@ -8,7 +8,6 @@ header-img: "img/go.jpg"
 tags:
     - 笔记
     - go
-    - 学习
     - 书
     - 基础
 ---

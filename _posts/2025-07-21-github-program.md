@@ -6,11 +6,10 @@ date:       2025-07-21 12:00:00
 author:     "hangyangjun"
 header-img: "img/github.png"
 tags:
-    - 记录
-    - 学习
     - github
     - AI
     - vue
+    - 项目
 ---
 >并非安时间顺序排列
 
