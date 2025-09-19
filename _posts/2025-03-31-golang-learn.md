@@ -8,8 +8,6 @@ header-img: "img/go.jpg"
 tags:
     - 笔记
     - go
-    - 书
-    - 基础
 ---
 > 参考资料：[《Go语言趣学指南》](https://huangz.works/gpwg/preview/lession1.html#id1)  
 
