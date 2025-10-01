@@ -39,6 +39,7 @@ go env -w GOPROXY=https://goproxy.cn
 ```go
 package main                        // 声明本代码所属的包
 import "fmt"                        // 导入 fmt 包，使其可用（fmt是format的缩写）
+//import 多个 加 括号
 func main() {                       // 声明一个名为 main 的函数
     fmt.Println("Hello, World!")    // 在屏幕上打印
 }
@@ -84,7 +85,7 @@ func main() {
 ```  
 结果：My weight on the surface of Mars is 51.0705 斤, and I would be 11 years old.  
 
-上面的代码清单会调用 `Print` 函数好几次, 另一种方法是调用 ***`Println`*** 函数，并向它传递*一组由**逗号**分隔的参数*, 如：(\n换行)
+上面的代码清单会调用 `Print` 函数好几次, 另一种方法是调用 ***`Println`*** 函数，并向它传递一组由**逗号**分隔的**参数**(自动添加空格，结尾换行), 如：
 ```go
 fmt.Println("My weight on the surface of Mars is", 149.0*0.3783, "lbs, and I would be", 41*365.2425/687, "years old.")
 ```
@@ -94,19 +95,21 @@ fmt.Println("My weight on the surface of Mars is", 149.0*0.3783, "lbs, and I wou
 fmt.Printf("My weight on the surface of %v is %v lbs.\n", "Earth", 149.0)
 ```
 `Printf` 接受的第一个参数总是**文本**，第二个参数则是**表达式**，而文本中包含的格式化变量 `%v` 则会在之后被替换成表达式的**值**。  
-`%v`之外的格式化变量请[查看文档](https://pkg.go.dev/fmt)  
+`%v`为通用格式   
+其他格式化变量请[查看文档](https://pkg.go.dev/fmt)  
 
-如：%[1]T\n
+如：`fmt.Printf("%[1]T\n", a)`
 
-%T 的作用：
+`%T` 的作用：
 直接输出变量的类型  
-%C 输出字符 代码点转字符
+`%C` 输出字符 代码点转字符
 
-[1] 的索引意义  
-[1] 表示引用第一个参数（x），[2] 会引用第二个参数，依此类推。
+`[1]` 的索引意义:  
+`[1]` 表示引用第一个参数（x），`[2]` 会引用第二个参数，依此类推。
+
 -------------------
 
-`Printf` 除了可以在句子的任意位置将格式化变量替换成指定的值之外，还能够调整文本的位置。 比如说，用户可以通过给定带有宽度的格式化变量 `%4v` ，将文本的长度填充至 4 个字符长。 当宽度为正数时，空格将被填充至文本左边，而当宽度为负数时，空格将被填充至文本右边：
+`Printf` 除了可以在句子的任意位置将格式化变量替换成指定的值之外，还能够调整文本的位置。 比如说，用户可以通过给定带有宽度的格式化变量 `%4v` ，将文本的长度填充至 4 个字符长。 当宽度为**正数**时，空格将被填充至文本左边，而当宽度为**负数**时，空格将被填充至文本右边：
 ```go
 fmt.Printf("%-15v$%4v\n", "SpaceX", 94)
 fmt.Printf("%-15v$%4v\n", "Virgin Galactic", 100)
@@ -125,8 +128,8 @@ fmt.Printf("%-15v$%4v\n", "Virgin Galactic", 100)
     distance = 401000000  //地火最远距离
     fmt.Println(distance/lightSpeed, "seconds") // 打印出“1337 seconds”
 ```  
-``常量`` 是**不能修改**的，否则编译器报错  
-``变量`` 必须先**声明**后使用。  
+`常量` 是**不能修改**的，否则编译器报错  
+`变量` 必须先**声明**后使用。  
 ### 一次声明多个变量
 ```go
 var (
@@ -137,7 +140,7 @@ var (
 var distance, speed = 56000000, 100800
 ```
 ### 赋值增量快捷方式
-`a*=b` == `a=a*b`  或 `+=` 和 `++` `--`等不过多赘述  
+`a*=b` 等同 `a=a*b`  或 `+=` 和 `++` `--`等不过多赘述  
 <font color=yellow>**Go并不支持 ``++count`` 这样的前置加法操作**  </font>  
 
 ## 生成随机数
