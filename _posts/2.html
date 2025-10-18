@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>收敛的辉光解密文字</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a16;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        /* 重新设计辉光效果，减小蓝光范围 */
+        :root {
+            --glow-color: #00ff00;
+            --hover-glow: #00ffff;
+            
+            /* 绿色基础辉光 */
+            --base-shadow: 
+                0 0 3px var(--glow-color),
+                0 0 6px var(--glow-color),
+                0 0 12px var(--glow-color),
+                0 0 24px var(--glow-color);
+                
+            /* 蓝色悬停辉光（范围减小，更集中） */
+            --hover-shadow: 
+                0 0 4px var(--hover-glow),
+                0 0 8px var(--hover-glow),
+                0 0 16px var(--hover-glow),
+                0 0 32px var(--hover-glow);
+        }
+
+        [data-scramble] {
+            font: 2.5rem/1.4 monospace;
+            color: var(--glow-color);
+            cursor: pointer;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            text-shadow: var(--base-shadow);
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        /* 悬停状态完全替换为蓝色辉光 */
+        [data-scramble]:hover {
+            color: var(--hover-glow);
+            text-shadow: var(--hover-shadow);
+            animation: hoverPulse 2s infinite ease-in-out;
+        }
+
+        /* 绿色呼吸动画 */
+        @keyframes pulse {
+            50% {
+                text-shadow:
+                    0 0 5px var(--glow-color),
+                    0 0 10px var(--glow-color),
+                    0 0 20px var(--glow-color),
+                    0 0 40px var(--glow-color);
+            }
+        }
+
+        /* 蓝色悬停呼吸动画（范围更小） */
+        @keyframes hoverPulse {
+            50% {
+                text-shadow:
+                    0 0 6px var(--hover-glow),
+                    0 0 12px var(--hover-glow),
+                    0 0 24px var(--hover-glow),
+                    0 0 48px var(--hover-glow);
+            }
+        }
+
+        .controls {
+            margin: 2rem 0;
+        }
+
+        button {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glow-color);
+            color: var(--glow-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            text-shadow: var(--base-shadow);
+        }
+
+        button:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+            color: var(--hover-glow);
+            border-color: var(--hover-glow);
+            text-shadow: var(--hover-shadow);
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hover to decrypt faster (30 FPS animation when not hovering)...</p>
+    <div data-scramble="这是全新的辉光效果"></div>
+    <div data-scramble="蓝光范围已减小"></div>
+    <div data-scramble="辉光过渡更自然"></div>
+    <div data-scramble="悬停时有专属动画"></div>
+
+    <div class="controls">
+        <button id="resetBtn">
+            <i class="fa fa-refresh"></i> 重置解密
+        </button>
+    </div>
+
+    <div class="description">
+        <p>改进点：添加了重置按钮，可以将所有文字恢复到初始乱码状态；非悬停时保持每秒30帧的稳定动画速度，悬停时加速解密。</p>
+    </div>
+
+    <script>
+        // 配置参数 - 精确控制帧率
+        const FRAME_RATE = 30;
+        const FRAME_INTERVAL = 1000 / FRAME_RATE; // 约33.333ms每帧
+        
+        // 存储所有解密元素的状态，用于重置功能
+        const scrambleStates = new Map();
+        
+        // 生成随机字符串
+        const randomString = (length) => {
+            let result = '';
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charsLength = chars.length;
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * charsLength));
+            }
+            return result;
+        };
+
+        // 解密核心逻辑
+        const setupScramble = (el) => {
+            const original = el.dataset.scramble;
+            const total = original.length;
+            let progress = 0;
+            let scrambleFrameId = null;  // 用于非悬停时的动画帧
+            let decryptInterval = null;  // 用于悬停时的解密
+            let lastFrameTime = 0;       // 记录上一帧时间，确保帧率稳定
+
+            // 初始显示随机字符串
+            el.textContent = randomString(total);
+
+            // 非悬停时的乱码更新函数 - 使用requestAnimationFrame确保平滑动画
+            const updateScramble = (timestamp) => {
+                // 计算时间差，确保动画速度稳定
+                if (!lastFrameTime) lastFrameTime = timestamp;
+                const elapsed = timestamp - lastFrameTime;
+
+                // 只在达到帧间隔时更新
+                if (elapsed >= FRAME_INTERVAL) {
+                    // 只更新未解密的部分
+                    const solved = original.slice(0, progress);
+                    const scrambled = randomString(total - progress);
+                    el.textContent = solved + scrambled;
+                    lastFrameTime = timestamp - (elapsed % FRAME_INTERVAL); // 修正时间，避免累积误差
+                }
+
+                // 继续请求下一帧
+                scrambleFrameId = requestAnimationFrame(updateScramble);
+            };
+
+            // 悬停时的解密函数
+            const updateDecrypt = () => {
+                if (progress >= total) {
+                    clearInterval(decryptInterval);
+                    decryptInterval = null;
+                    el.textContent = original;
+                    return;
+                }
+                progress++;
+                // 立即更新显示
+                const solved = original.slice(0, progress);
+                const scrambled = randomString(total - progress);
+                el.textContent = solved + scrambled;
+            };
+
+            // 开始非悬停状态的乱码更新
+            const startScrambling = () => {
+                if (!scrambleFrameId) {
+                    lastFrameTime = 0; // 重置帧计时器
+                    scrambleFrameId = requestAnimationFrame(updateScramble);
+                }
+            };
+
+            // 停止非悬停状态的乱码更新
+            const stopScrambling = () => {
+                if (scrambleFrameId) {
+                    cancelAnimationFrame(scrambleFrameId);
+                    scrambleFrameId = null;
+                }
+            };
+
+            // 开始悬停状态的解密
+            const startDecrypting = () => {
+                if (!decryptInterval && progress < total) {
+                    decryptInterval = setInterval(updateDecrypt, 40); // 悬停时解密速度更快
+                }
+            };
+
+            // 停止悬停状态的解密
+            const stopDecrypting = () => {
+                if (decryptInterval) {
+                    clearInterval(decryptInterval);
+                    decryptInterval = null;
+                }
+            };
+
+            // 重置单个元素
+            const reset = () => {
+                // 停止所有定时器和动画帧
+                stopScrambling();
+                stopDecrypting();
+                
+                // 重置进度
+                progress = 0;
+                
+                // 重新显示随机字符串
+                el.textContent = randomString(total);
+                
+                // 重新开始乱码动画
+                startScrambling();
+            };
+
+            // 鼠标进入时：停止乱码，开始解密
+            el.addEventListener('mouseenter', () => {
+                stopScrambling();
+                startDecrypting();
+            });
+
+            // 鼠标离开时：停止解密，开始乱码
+            el.addEventListener('mouseleave', () => {
+                stopDecrypting();
+                startScrambling();
+            });
+
+            // 存储重置函数，用于全局重置
+            scrambleStates.set(el, reset);
+
+            // 初始启动乱码更新
+            startScrambling();
+        };
+
+        // 为所有带有data-scramble属性的元素设置效果
+        document.querySelectorAll('[data-scramble]').forEach(setupScramble);
+
+        // 重置按钮功能
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            // 调用所有元素的重置函数
+            scrambleStates.forEach(reset => reset());
+        });
+    </script>
+</body>
+
+</html>
+    
